@@ -1,0 +1,1930 @@
+<!-- Navigation -->
+<nav id="mainNav" class="navbar navbar-default navbar-fixed-top navbar-custom">
+    <div class="container">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse"
+                    data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span> Menu <i class="fa fa-bars"></i>
+            </button>
+            <a class="navbar-brand" href="#page-top">GPAK5 TRACKING</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                <li class="hidden">
+                    <a href="#page-top"></a>
+                </li>
+
+                <li class="page-scroll">
+                    <a href="#Program">Program</a>
+                </li>
+                <li class="page-scroll">
+                    <a href="#Modules">Modules</a>
+                </li>
+
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container-fluid -->
+</nav>
+
+<!-- Header -->
+<header>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img class="img-responsive" src="https://github.com/mbalci/GPAK5_Tracking/raw/master/image/profile.png" alt="">
+                <div class="intro-text">
+                    <span class="name">GPAK5 TRACKING</span>
+                    <hr class="star-light">
+                    <span class="skills">GPAK5 TRACKING</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Portfolio Grid Section -->
+
+<section id="Program">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Program</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-sm-6 portfolio-item">
+                <div class="panel panel-info">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Read From File</h3>
+                    </div>
+                    <div class="panel-body">
+                        <input type="file" id="file" name="file" accept=".gp5" class="btn btn-primary"/>
+
+                    </div>
+                </div>
+                <div class="panel panel-info">
+
+                    <div class="panel-heading clearfix">
+                        <h3 class="panel-title pull-left">Read From GPAK5</h3>
+                        <button class="btn btn-info btn-sm pull-right " id="checkDevice">Scan Devices</button>
+
+                    </div>
+
+                    <div class="panel-body">
+
+                        <div class="col-sm-6 portfolio-item">
+
+                            I2C Address
+                            <select class="form-control" id="readI2Cadr" style="width: auto;">
+                                <option value="0000">0000</option>
+                                <option value="0001">0001</option>
+                                <option value="0010">0010</option>
+                                <option value="0011">0011</option>
+                                <option value="0100">0100</option>
+                                <option value="0101">0101</option>
+                                <option value="0110">0110</option>
+                                <option value="0111">0111</option>
+                                <option value="1000">1000</option>
+                                <option value="1001">1001</option>
+                                <option value="1010">1010</option>
+                                <option value="1011">1011</option>
+                                <option value="1100">1100</option>
+                                <option value="1101">1101</option>
+                                <option value="1110">1110</option>
+                                <option value="1111">1111</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 portfolio-item">
+                            <button class="btn btn-warning  btn-lg" style="float: right" id="readAll">Read All</button>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+            <div class="col-sm-6 portfolio-item" id="hiddenArea">
+                <table id="readTable">
+                    <thead>
+                    <tr>
+                        <th>Register</th>
+                        <th>Value</th>
+                        <th></th>
+
+                    </tr>
+                    </thead>
+
+                </table>
+                <div class="panel panel-danger">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title">Write to GPAK5</h3>
+                    </div>
+                    <div class="panel-body">
+                        <div class="col-sm-6 portfolio-item">
+                            I2C Address
+                            <select class="form-control" id="writeI2Cadr" style="width: auto;">
+                                <option value="0000">0000</option>
+                                <option value="0001">0001</option>
+                                <option value="0010">0010</option>
+                                <option value="0011">0011</option>
+                                <option value="0100">0100</option>
+                                <option value="0101">0101</option>
+                                <option value="0110">0110</option>
+                                <option value="0111">0111</option>
+                                <option value="1000">1000</option>
+                                <option value="1001">1001</option>
+                                <option value="1010">1010</option>
+                                <option value="1011">1011</option>
+                                <option value="1100">1100</option>
+                                <option value="1101">1101</option>
+                                <option value="1110">1110</option>
+                                <option value="1111">1111</option>
+                            </select>
+                        </div>
+                        <div class="col-sm-6 portfolio-item">
+                            <button type="button" class="btn btn-danger btn-lg" id="writeAll" style="float: right">Write
+                                All
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+<section id="Modules">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12 text-center">
+                <h2>Modules</h2>
+                <hr class="star-primary">
+            </div>
+        </div>
+        <div class="row" id="module-row">
+
+
+            <div class="col-sm-6 portfolio-item" id="add-module-div">
+                <div class="panel panel-info">
+
+                    <div class="panel-heading">
+                        <h3 class="panel-title pull-left">Add Module</h3>
+                        <div class="btn-group pull-right">
+                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown"
+                                    aria-haspopup="true" aria-expanded="false">
+                                Operations <span class="caret"></span>
+                            </button>
+                            <ul class="dropdown-menu">
+                                <li><a id="load_module_from_file">Load From File</a></li>
+                                <li><a id="save_modules_to_file">Save Modules to File</a></li>
+
+                            </ul>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="panel-body">
+                        <form class="form-horizontal" id="modal_input_form">
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Name:</label>
+                                <div class="col-sm-8">
+                                    <input type="text" class="form-control" id="module-name" placeholder="Module Name"/>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Inputs:</label>
+                                <div class="col-sm-6">
+                                    <textarea class="form-control" id="module_inputs" readonly></textarea>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-info   " id="add-input" data-toggle="modal"
+                                            data-target="#add-input-modal">Add
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger   " id="remove-input"
+                                    >Remove
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label class="control-label col-sm-2">Outputs:</label>
+                                <div class="col-sm-6">
+                                    <textarea class="form-control" id="module_outputs" readonly></textarea>
+                                </div>
+                                <div class="col-sm-4">
+                                    <button type="button" class="btn btn-info   " id="add-output"
+                                    >Add
+                                    </button>
+
+                                    <button type="button" class="btn btn-danger   " id="remove-output"
+                                    >Remove
+                                    </button>
+                                </div>
+                            </div>
+                            <div class="form-group pull-right">
+                                <div class="col-sm-12 ">
+                                    <button type="button" class="btn btn-success   " id="save-module">Save Module
+                                    </button>
+
+                                    <button type="reset" class="btn btn-warning   " id="reset-module">Reset
+                                    </button>
+
+
+                                </div>
+                            </div>
+
+                        </form>
+                    </div>
+                </div>
+
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+<!-- Modals -->
+<!-- --------------------------------------
+--------------------------------------
+------------------------------------------
+------------------------------------------>
+
+
+<div id="add-input-modal" class="modal fade " role="dialog">
+    <div class="modal-dia ">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Input</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="add-input-modal-name" placeholder="Input Name">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">I2C Address:</label>
+                        <div class="col-sm-10">
+                            <select class="form-control" id="add-input-modal-i2c-adr" style="width: auto;">
+                                <option value="0000">0000</option>
+                                <option value="0001">0001</option>
+                                <option value="0010">0010</option>
+                                <option value="0011">0011</option>
+                                <option value="0100">0100</option>
+                                <option value="0101">0101</option>
+                                <option value="0110">0110</option>
+                                <option value="0111">0111</option>
+                                <option value="1000">1000</option>
+                                <option value="1001">1001</option>
+                                <option value="1010">1010</option>
+                                <option value="1011">1011</option>
+                                <option value="1100">1100</option>
+                                <option value="1101">1101</option>
+                                <option value="1110">1110</option>
+                                <option value="1111">1111</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Bits:</label>
+                        <div class="col-sm-10">
+                                <input type="text" class="form-control " id="add-input-modal-bits" placeholder="Bits">
+                        </div>
+
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="input-add-save-modal" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+
+<div id="add-output-modal" class="modal fade" role="dialog">
+    <div class="modal-dia">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Add Output</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Name:</label>
+                        <div class="col-sm-10">
+                            <input type="text" class="form-control" id="add-output-modal-name"
+                                   placeholder="Output Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="control-label col-sm-2">Function:</label>
+                        <div class="col-sm-10">
+                            <div class="input-group">
+                                <textarea class="form-control" id="add-output-modal-func"
+                                ></textarea>
+                                <span class="input-group-btn">
+                                    <button type="button" class="btn  btn-info " id="add_output_test">
+                                        Test
+                                    </button>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="btn-group btn-group-sm btn-i-group col-sm-10 col-sm-offset-2"
+                             id="add-output-modal-input-buttons">
+                        </div>
+                    </div>
+
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="output-add-save-modal" class="btn btn-success">Save</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="remove-input-modal" class="modal fade" role="dialog">
+    <div class="modal-dia">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Remove Input</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+
+                    <div class="form-group  " id="remove-input-modal-inputs">
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="input-remove-save-modal" class="btn btn-danger">Remove</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="remove-output-modal" class="modal fade" role="dialog">
+    <div class="modal-dia">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Remove Output</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal">
+
+                    <div class="form-group  " id="remove-output-modal-outputs">
+
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="output-remove-save-modal" class="btn btn-danger">Remove</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<div id="output_test_modal" class="modal fade" role="dialog">
+    <div class="modal-dia">
+
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">Output Test</h4>
+            </div>
+            <div class="modal-body">
+                <form class="form-horizontal" id="output_test_form">
+
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" id="output_test_modal_test" class="btn btn-success">Test</button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript">
+   
+    $(document).ready(function () {
+        var dataTable;
+        var nvm = [];
+        var tableContent = [];
+        var chartEditor = null;
+        var module_section=$('section#Modules');
+        var tablee=$('table');
+        google.charts.load('current', {'packages': ['corechart', 'charteditor']});
+
+        var m_inputs = [];
+        var m_outputs = [];
+        var modules_core = {
+            rel_reg: {},
+            rel_input: {},
+            rel_output: {},
+            graph_objects: {},
+            timer_id: null,
+            start_flag: true,
+            modules: {},
+            m_statu: {},
+            m_reg_rel: {},
+            init: function (module) {
+
+                var m_name = module.m_name;
+
+
+                var m_inputs = module.m_inputs;
+                var m_outputs = module.m_outputs;
+                var i, y;
+                if (this.m_reg_rel[m_name] == null) {
+                    this.m_reg_rel[m_name] = {};
+                }
+                for (i = 0; i < m_inputs.length; i++) {
+                    var i_sol = m_inputs[i].i_sol;
+                    var i2c_adr = '"' + m_inputs[i].i_i2c_adr + '"';
+
+                    if (this.rel_input[m_name] == null) {
+                        this.rel_input[m_name] = {};
+                    }
+
+                    if (this.rel_input[m_name][m_inputs[i].i_name] == null) {
+                        this.rel_input[m_name][m_inputs[i].i_name] = {};
+                        this.rel_input[m_name][m_inputs[i].i_name].val = 0;
+                        this.rel_input[m_name][m_inputs[i].i_name].i_sol = i_sol;
+                        this.rel_input[m_name][m_inputs[i].i_name].i2c_adr = i2c_adr;
+                    }
+
+
+                    if (this.rel_reg[i2c_adr] == null) {
+                        this.rel_reg[i2c_adr] = {};
+                        this.rel_reg[i2c_adr].regs = {};
+                        this.rel_reg[i2c_adr].statu = "stop";
+
+                    }
+                    if (this.m_reg_rel[m_name][i2c_adr] == null) {
+                        this.m_reg_rel[m_name][i2c_adr] = [];
+                    }
+
+
+                    for (y = 0; y < i_sol.length; y++) {
+                        if (i_sol[y].i_type != 5) {
+                            if (this.rel_reg[i2c_adr].regs[i_sol[y].i_reg] == null) {
+                                this.rel_reg[i2c_adr].regs[i_sol[y].i_reg] = {};
+                                this.rel_reg[i2c_adr].regs[i_sol[y].i_reg].r_val = 0;
+                                this.rel_reg[i2c_adr].regs[i_sol[y].i_reg].statu = "stop";
+                                this.rel_reg[i2c_adr].regs[i_sol[y].i_reg].r_module = [];
+                                this.rel_reg[i2c_adr].regs[i_sol[y].i_reg].r_module.push(m_name);
+
+                            }
+                            if (this.rel_reg[i2c_adr].regs[i_sol[y].i_reg].r_module.indexOf(m_name) < 0)
+                                this.rel_reg[i2c_adr].regs[i_sol[y].i_reg].r_module.push(m_name);
+                            if (this.m_reg_rel[m_name][i2c_adr].indexOf(i_sol[y].i_reg < 0)) {
+                                this.m_reg_rel[m_name][i2c_adr].push(i_sol[y].i_reg);
+                            }
+                        }
+                    }
+
+                }
+
+                for (i = 0; i < m_outputs.length; i++) {
+                    if (this.rel_output[m_name] == null) {
+                        this.rel_output[m_name] = {};
+                    }
+
+                    if (this.rel_output[m_name][m_outputs[i].o_name] == null) {
+                        this.rel_output[m_name][m_outputs[i].o_name] = {};
+                        this.rel_output[m_name][m_outputs[i].o_name].val = [];
+                        this.rel_output[m_name][m_outputs[i].o_name].s_func = m_outputs[i].s_func;
+                    }
+                }
+                if (this.graph_objects[m_name] == null) {
+                    this.graph_objects[m_name] = {};
+                }
+                var height = $("#add-module-div").height();
+                var width = $("#add-module-div").width();
+                $("#module-row").append(' <div class="col-sm-6 portfolio-item" id="module_port_' + m_name + '" >\
+                                                <div class="panel panel-info">\
+                                                    <div class="panel-heading ">\
+                                                        <h3 class="panel-title pull-left">' + m_name + '</h3>\
+                                                        <div class=" pull-right">\
+                                                        <div class="btn-group" role="group" > \
+                                                            <button type="button" class="btn btn-success m_statu_button fa fa-play" id="m_statu_' + m_name + '"></button></div>\
+                                                           <div class="btn-group" role="group" >\
+                                                            <button type="button" class="btn btn-info dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">\
+                                                            Operations <span class="caret"></span>\
+                                                            </button>\
+                                                            <ul class="dropdown-menu">\
+                                                                <li><a  class="c_editor" id="c_editor_' + m_name + '">Chart Editor</a></li>\
+                                                                <li><a class="save_module_to_file" id="s_module_file_' + m_name + '">Save Module to File</a></li>\
+                                                                <li><a  class="delete_module" id="d_module_' + m_name + '">Delete Module</a></li>\
+                                                                \
+                                                                <li><a class="c_data_to_csv" id="c_csv_' + m_name + '" >Download Data</a></li>\
+                                                             </ul></div>\
+                                                            </div>\
+                                                        \
+                                                        <div class="clearfix"></div>\
+                                                    </div>\
+                                        <div class="panel-body" id="div_' + m_name + '" style="height:' + height + ';width:' + width + ';">' +
+                    '</div></div></div>');
+                var wrap = new google.visualization.ChartWrapper();
+
+
+                var data = new google.visualization.DataTable();
+                data.addColumn('number', 'Count');
+
+                for (i = 0; i < m_outputs.length; i++) {
+                    data.addColumn('number', m_outputs[i].o_name);
+                }
+
+                wrap.setDataTable(data);
+                var option;
+                var type;
+
+                if (jQuery.isEmptyObject(module.g_options)) {
+
+                    option = {
+                        'legend': 'top', 'width': '100%', 'height': '100%', 'chartArea': {
+                            'width': "100%"
+                        },
+                        'animation': {'startup': true, 'duration': 1000}, 'vAxis': {'textPosition': 'in'}
+                    };
+                    type = 'LineChart';
+                }
+                else {
+
+                    option = module.g_options;
+                    type = module.g_type;
+                }
+                wrap.setContainerId('div_' + m_name);
+                wrap.setChartType(type);
+                wrap.setOptions(option);
+                this.graph_objects[m_name].chart_wrapper = wrap;
+                this.graph_objects[m_name].container_id = 'div_' + m_name;
+                this.graph_objects[m_name].chart_type = type;
+                this.graph_objects[m_name].g_option = option;
+                this.graph_objects[m_name].data_table = data;
+                this.modules[m_name].g_options = option;
+                this.m_statu[m_name] = "stop";
+
+                wrap.draw();
+
+
+            },
+
+            update_values: function () {
+                if (!modules_core.anyUpdateableModules()) {
+
+                    modules_core.stop();
+                    return;
+                }
+                for (var i2cadr in modules_core.rel_reg) {
+                    if (modules_core.rel_reg[i2cadr].statu !== "stop")
+                        this.update_reg_val(i2cadr);
+                }
+                for (var m_name in modules_core.graph_objects) {
+                    if (modules_core.m_statu[m_name] === "stop") continue;
+                    if (this.update_input_val(m_name)) {
+                        if (this.update_output_val(m_name))
+                            this.update_graphs(m_name);
+                        else {
+                            this.m_statu[m_name] = "stop";
+                            this.update_reg_statu(m_name, "stop");
+                        }
+                    }
+
+                }
+            },
+            update_reg_statu: function (m_name1, type) {
+                var i = 0;
+
+                if (type === "start") {
+                    for (var i2cadr in this.m_reg_rel[m_name1]) {
+                        modules_core.rel_reg[i2cadr].statu = "start";
+                        var regs1 = this.m_reg_rel[m_name1][i2cadr];
+
+                        for (i = 0; i < regs1.length; i++) {
+                            modules_core.rel_reg[i2cadr].regs[regs1[i]].statu = "start";
+                        }
+
+                    }
+                } else if (type === "stop") {
+                    for (var i2cadr in this.m_reg_rel[m_name1]) {
+
+                        var regs1 = this.m_reg_rel[m_name1][i2cadr];
+                        for (i = 0; i < regs1.length; i++) {
+                            var s_flag = "stop";
+                            var o_modul = this.rel_reg[i2cadr].regs[regs1[i]].r_module;
+                            for (var y = 0; y < o_modul.length; y++) {
+                                if (modules_core.m_statu[o_modul[y]] !== "stop") {
+                                    s_flag = modules_core.m_statu[o_modul[y]];
+                                    break;
+                                }
+                            }
+                            modules_core.rel_reg[i2cadr].regs[regs1[i]].statu = s_flag;
+                        }
+                    }
+
+
+                } else if (type === "delete") {
+                    for (var i2cadr in this.m_reg_rel[m_name1]) {
+
+                        var regs1 = this.m_reg_rel[m_name1][i2cadr];
+                        for (i = 0; i < regs1.length; i++) {
+
+                            var o_modul = this.rel_reg[i2cadr].regs[regs1[i]].r_module;
+                            o_modul.splice(o_modul.indexOf(m_name1), 1);
+                            if (o_modul.length <= 0) {
+                                delete this.rel_reg[i2cadr].regs[regs1[i]];
+                            }
+                            else {
+                                this.rel_reg[i2cadr].regs[regs1[i]].r_module = o_modul;
+                            }
+
+                        }
+                        if (jQuery.isEmptyObject(this.rel_reg[i2cadr].regs)) {
+                            delete this.rel_reg[i2cadr];
+                        }
+                    }
+                }
+
+            },
+            update_reg_val: function (i2cadr) {
+                var regs = [];
+                var vals;
+
+                for (var reg1 in this.rel_reg[i2cadr].regs) {
+
+                    if (this.rel_reg[i2cadr].regs[reg1].statu !== "stop")
+                        regs.push(reg1);
+                }
+                if (regs.length == 0) return;
+                vals = get_mult_reg(i2cadr, regs);
+                if (typeof vals === "string") {
+                    if (vals.indexOf("i2c_disconnect") >= 0) {
+                        notifyMessage(vals.substring(14), "Error", 1);
+                        modules_core.rel_reg[i2cadr].statu = "stop";
+                        for (var name in modules_core.m_reg_rel) {
+                            if (modules_core.m_reg_rel[name].hasOwnProperty(i2cadr)) {
+                                modules_core.m_statu[name] = "stop";
+
+                                m_statu_button_change($("#m_statu_" + name), "start");
+                            }
+                        }
+                        return;
+                    }
+                    else if (vals === "board_disconnect") {
+                        notifyMessage("Can't connect to Lolin NodeMcu\n All modules stopped", "Error", 1);
+                        modules_core.start_flag = false;
+                        modules_core.stop();
+                        return;
+                    }
+
+
+                }
+
+                for (var i = 0; i < regs.length; i++) {
+                    modules_core.rel_reg[i2cadr].regs[regs[i]].r_val = vals[i];
+                }
+
+            },
+            update_input_val: function (m_name) {
+                var res = 0;
+                var v = 0;
+                var i_sol;
+                var i2c_adr;
+
+
+                for (var input in this.rel_input[m_name]) {
+                    i2c_adr = this.rel_input[m_name][input].i2c_adr;
+
+                    if (modules_core.rel_reg[i2c_adr].statu === "stop") {
+                        modules_core.m_statu[m_name] = "stop";
+                        return false;
+                    }
+                    i_sol = this.rel_input[m_name][input].i_sol;
+
+                    for (var i = 0; i < i_sol.length; i++) {
+
+                        if (i_sol[i].i_type != 5) {
+                            v = this.rel_reg[i2c_adr].regs[i_sol[i].i_reg].r_val;
+                            v &= i_sol[i].i_mask;
+                            v = v >> i_sol[i].i_bit_shift;
+                            if (i_sol[i].i_type == 2) {
+                                v = reverse_bits_order(v);
+                            }
+                            v = v << i_sol[i].i_shift;
+                        }
+                        else {
+                            v = i_sol[i].i_mask;
+                            v = v << i_sol[i].i_shift;
+
+                        }
+                        res |= v;
+                    }
+                    this.rel_input[m_name][input].val = res;
+                    res = 0;
+                }
+                return true;
+
+
+            },
+            update_output_val: function (m_name) {
+                var res;
+
+
+                var dat = [];
+                var i = 1;
+                dat[0] = this.graph_objects[m_name].data_table.getNumberOfRows() + 1;
+                for (var output in this.rel_output[m_name]) {
+                    res = eval(this.rel_output[m_name][output].s_func);
+                    if (typeof res !== "number") {
+                        notifyMessage("Wrong output function: " + m_name + " -> " + output, "Error", 1);
+                        return false;
+                    }
+                    dat[i] = res;
+                    i++;
+
+
+                }
+                this.graph_objects[m_name].data_table.addRow(dat);
+                return true;
+
+            },
+            update_graphs: function (m_name) {
+
+                var wrap = modules_core.graph_objects[m_name].chart_wrapper;
+                var data = modules_core.graph_objects[m_name].data_table;
+
+
+                wrap.setDataTable(data);
+                wrap.draw();
+
+            },
+            anyUpdateableModules: function () {
+
+                for (var name in modules_core.m_statu) {
+                    if (modules_core.m_statu[name] === "start") return true;
+                }
+                return false;
+            },
+            stop: function () {
+
+                clearTimeout(parseInt(modules_core.timer_id));
+                modules_core.timer_id = null;
+                for (var m_name in modules_core.m_statu) {
+                    this.m_statu[m_name] = "stop";
+                    m_statu_button_change($("#m_statu_" + m_name), "start");
+                }
+
+            },
+            core: function () {
+                var t;
+
+                if (modules_core.start_flag) {
+
+                    if (modules_core.timer_id != null) {
+                        clearTimeout(parseInt(modules_core.timer_id));
+                        modules_core.timer_id = null;
+                    }
+
+                    t = setTimeout(modules_core.core, 10000);
+                    modules_core.timer_id = t;
+
+                    modules_core.update_values();
+                }
+                else {
+                    modules_core.stop();
+                }
+
+
+            }
+
+        };
+        var module = function (m_name, m_inputs, m_outputs, g_type, g_options, m_type) {
+            this.m_name = m_name;
+            this.m_type = m_type;
+            this.g_options = g_options;
+            this.g_type = g_type;
+            this.m_inputs = m_inputs;
+            this.m_outputs = m_outputs;
+
+        };
+
+        var m_input = function (i_name, i_i2c_adr, i_bits) {
+            this.i_name = i_name;
+            this.i_i2c_adr = i_i2c_adr;
+            this.i_bits = i_bits;
+            this.i_sol = [];
+            this.reg = function (i_type, i_reg, i_mask, i_shift, i_bit_shift) {
+                this.i_type = i_type;
+                this.i_reg = i_reg;
+                this.i_mask = i_mask;
+                this.i_shift = i_shift;
+                this.i_bit_shift = i_bit_shift;
+
+            }
+        };
+        var m_output = function (o_name, o_func) {
+            this.o_name = o_name;
+            this.o_func = o_func;
+            this.s_func = "";
+            this.i_arr = [];
+        };
+        $.extend(m_input.prototype, {
+            set_i: function () {
+
+                var reg_regex_group1 = new RegExp('^([0-9a-fA-F]{1,2}<[0-7]:[0-7]>)$');
+                var reg_regex_group2 = new RegExp('^([0-9a-fA-F]{1,2}<[0-7]>)$');
+                var reg_regex_group3 = new RegExp('^([0-9a-fA-F]{1,2})$');
+                var reg_regex_group4 = new RegExp('^(\[[01]+\])$');
+                var type;
+                var mask;
+                var reg;
+                var shift = 0;
+                var bit_shift;
+                var n_bit = 0;
+
+
+                var bits = this.i_bits.split(',');
+                for (var i = bits.length - 1; i >= 0; i--) {
+
+                    if (reg_regex_group1.test(bits[i])) {
+                        var number1 = parseInt(bits[i].match(/<(\d):/)[1], 10);
+                        var number2 = parseInt(bits[i].match(/:(\d)>/)[1], 10);
+                        reg = parseInt(bits[i].match(/.+?(?=<)/)[0], 16);
+
+                        shift += n_bit;
+                        var y = 0;
+                        if (number2 >= number1) {
+                            type = 2;
+                            bit_shift = number1;
+                            n_bit = number2 - number1 + 1;
+                            mask = 0;
+                            for (y = number1; y <= number2; y++) {
+                                mask |= 1 << y;
+                            }
+
+                        } else {
+                            type = 1;
+                            bit_shift = number2;
+                            n_bit = number1 - number2 + 1;
+                            mask = 0;
+                            for (y = number2; y <= number1; y++) {
+                                mask |= 1 << y;
+                            }
+                        }
+
+
+                        this.i_sol.push(new this.reg(type, reg, mask, shift, bit_shift));
+
+                    }
+                    else if (reg_regex_group2.test(bits[i])) {
+                        var number = parseInt(bits[i].match(/<(\d)>/)[1], 10);
+                        reg = parseInt(bits[i].match(/.+?(?=<)/)[0], 16);
+                        shift += n_bit;
+                        type = 3;
+                        bit_shift = number;
+                        mask = 0 | (1 << number);
+                        n_bit = 1;
+                        this.i_sol.push(new this.reg(type, reg, mask, shift, bit_shift));
+
+                    }
+                    else if (reg_regex_group3.test(bits[i])) {
+                        type = 4;
+                        reg = parseInt(bits[i], 16);
+                        shift += n_bit;
+                        bit_shift = 0;
+                        mask = 255;
+                        n_bit = 8;
+                        this.i_sol.push(new this.reg(type, reg, mask, shift, bit_shift));
+
+
+                    } else if (reg_regex_group4.test(bits[i])) {
+                        bits[i] = bits[i].replace(/[\[\]]/g, '');
+                        mask = parseInt(bits[i], 2);
+                        bit_shift = 0;
+                        reg = 0;
+                        shift += n_bit;
+                        n_bit = bits[i].length;
+                        type = 5;
+                        this.i_sol.push(new this.reg(type, reg, mask, shift, bit_shift));
+
+                    }
+                    else {
+                        notifyMessage("There is a error while arrange input", "Error", 1);
+                    }
+
+
+                }
+
+            }
+        });
+
+        $.extend(m_output.prototype, {
+            r_inputs: function () {
+                var res = this.o_func.match(/@[^\s]+/g);
+
+
+                $(res).each(function (index) {
+                    res[index] = res[index].replace(/(\s)+|[@]/g, '');
+
+                });
+
+                return res;
+            },
+            s_input: function (input) {
+                var r_i = this.r_inputs();
+                if (r_i != null)
+                    return r_i.indexOf(input);
+                else return -1;
+            },
+
+            set_o: function (m_name) {
+
+                this.s_func = this.o_func.replace(/@[^\s]+/g, function (x) {
+                    return 'this.rel_input["' + m_name + '"]["' + x.substr(1) + '"].val';
+                });
+
+            }
+        });
+
+        $('#input-add-save-modal').click(function () {
+            var name = $('#add-input-modal-name').val();
+            var i2cAdr = parseInt($('#add-input-modal-i2c-adr option:selected').text() + "000", 2);
+            var bits = $('#add-input-modal-bits').val();
+
+            var success_flag = true;
+            bits = bits.replace(/\s+/g, '');
+            if (name == "" || bits == "") {
+                notifyMessage("Please fill all field", "Error", 1);
+                success_flag = false;
+            }
+            else if (!name.match(/^[a-zA-Z]/)) {
+                notifyMessage("Input names must be start with letter", "Error", 1);
+                success_flag = false;
+            }
+            else {
+                for (var i = 0; i < m_inputs.length; i++) {
+                    if (name == m_inputs[i].i_name) {
+                        notifyMessage("Input's name must be unique", "Error", 1);
+                        success_flag = false;
+                        break;
+                    }
+                }
+                if (name.match(/(\s)|([@])/) != null) {
+                    notifyMessage("Input's name can not contain spaces or \"@\" character", "Error", 1);
+                    success_flag = false;
+                }
+                if (!test_bits(bits)) {
+                    success_flag = false;
+                }
+            }
+
+            if (success_flag) {
+                m_inputs.push(new m_input(name, i2cAdr, bits));
+                change_io_field(m_inputs, 0);
+
+                $('#add-input-modal').modal('hide');
+                form_clear("input_modal");
+
+
+            }
+
+        });
+        $('#add-output').click(function () {
+            var i_btn = $('#add-output-modal-input-buttons');
+            i_btn.html("");
+            if (m_inputs.length != 0) {
+
+                for (var i = 0; i < m_inputs.length; i++) {
+                    i_btn.append('<button type="button" class="btn btn-primary btn-sm">@' + m_inputs[i].i_name + '</button>');
+                }
+
+            }
+            $('#add-output-modal').modal("show");
+        });
+        $('.btn-i-group').on('click', 'button', function () {
+            var func_i = $('#add-output-modal-func');
+            var func = func_i.val();
+
+            func_i.val(func + " " + $(this).text() + " ");
+        });
+        $('#output-add-save-modal').click(function () {
+
+            var name = $('#add-output-modal-name').val();
+            var func = $('#add-output-modal-func').val();
+            var success = true;
+            if (name == "" || func == "") {
+                notifyMessage("Please fill all field", "Error", 1);
+                success = false;
+            }
+            else if (!name.match(/^[a-zA-Z]/)) {
+                notifyMessage("Output names must be start with letter", "Error", 1);
+                success = false;
+            }
+            else if (name.indexOf(";") >= 0) {
+                notifyMessage("Output names can't contain \";\"", "Error", 1);
+                success = false;
+            }
+            else {
+                success = test_func(func, m_inputs);
+            }
+            if (success) {
+                m_outputs.push(new m_output(name, func));
+                change_io_field(m_outputs, 1);
+
+                $('#add-output-modal').modal('hide');
+                form_clear("output_modal");
+
+
+            }
+
+        });
+        $('#remove-input').click(function () {
+            var sel_inputs = $('#remove-input-modal-inputs');
+            sel_inputs.html("");
+            if (m_inputs.length != 0) {
+
+                for (var i = 0; i < m_inputs.length; i++) {
+                    sel_inputs.append('<div class="form-check" ><label class="form-check-label col-sm-10">\
+                        <input type="checkbox" class="form-check-input col-sm-2"   value="' + m_inputs[i].i_name + '" >\
+                    ' + m_inputs[i].i_name + '</label></div>');
+                }
+                $('#remove-input-modal').modal("show");
+
+            }
+            else {
+                notifyMessage("There is no input to remove", "Error", "1");
+            }
+        });
+        $('#remove-output').click(function () {
+            var sel_outputs = $('#remove-output-modal-outputs');
+            sel_outputs.html("");
+            if (m_outputs.length != 0) {
+
+                for (var i = 0; i < m_outputs.length; i++) {
+                    sel_outputs.append('<div class="form-check" ><label class="form-check-label col-sm-10">\
+                        <input type="checkbox" class="form-check-output col-sm-2"   value="' + m_outputs[i].o_name + '" >\
+                    ' + m_outputs[i].o_name + '</label></div>');
+                }
+                $('#remove-output-modal').modal("show");
+
+            }
+            else {
+                notifyMessage("There is no output to remove", "Error", "1");
+            }
+        });
+        $('#input-remove-save-modal').click(function () {
+
+            var inputs = [];
+            $('#remove-input-modal input[type="checkbox"]:checked').each(function (index) {
+                inputs[index] = $(this).val();
+            });
+            if (inputs.length <= 0) {
+                notifyMessage("Please select inputs that you want delete", "Error", 1);
+                return;
+            }
+            var success = true;
+            var index_i = [];
+            var i = 0;
+            var y = 0;
+
+            for (y = 0; y < inputs.length; y++) {
+                for (i = 0; i < m_outputs.length; i++) {
+
+                    if (m_outputs[i].s_input(inputs[y]) != -1) {
+                        notifyMessage(m_outputs[i].o_name + " contains " + inputs[y], "Error", 1);
+                        success = false;
+                    }
+
+                }
+                if (!success) continue;
+                for (var z = 0; z < m_inputs.length; z++) {
+
+                    if (inputs[y] == m_inputs[z].i_name) {
+                        index_i.push(z);
+                        break;
+                    }
+                }
+            }
+            if (success) {
+                index_i.sort();
+
+                for (i = index_i.length - 1; i >= 0; i--) {
+                    m_inputs.splice(index_i[i], 1);
+                }
+                change_io_field(m_inputs, 0);
+                $('#remove-input-modal').modal("hide");
+            }
+
+        });
+        $('#output-remove-save-modal').click(function () {
+
+            var outputs = [];
+            $('#remove-output-modal input[type="checkbox"]:checked').each(function (index) {
+                outputs[index] = $(this).val();
+            });
+            if (outputs.length <= 0) {
+                notifyMessage("Please select inputs that you want delete", "Error", 1);
+                return;
+            }
+
+
+            var index_o = [];
+            for (var i = 0; i < outputs.length; i++) {
+                for (var y = 0; y < m_outputs.length; y++) {
+                    if (outputs[i] == m_outputs[y].o_name) {
+                        index_o.push(y);
+                        break;
+                    }
+                }
+
+            }
+            index_o.sort();
+            for (i = index_o.length - 1; i >= 0; i--) {
+                m_outputs.splice(index_o[i], 1);
+            }
+
+            change_io_field(m_outputs, 1);
+            $('#remove-output-modal').modal("hide");
+
+
+        });
+        $('#reset-module').click(function () {
+            m_inputs = [];
+            m_outputs = [];
+            change_io_field(m_outputs, 1);
+            change_io_field(m_inputs, 0);
+            $('#module-name').val("");
+
+
+        });
+        $('#save-module').click(function () {
+
+            var name = $('#module-name').val();
+
+            if (name == "") {
+                notifyMessage("Please enter a name", "Error", 1);
+            }
+            else if (!name.match(/^[a-zA-Z]/)) {
+                notifyMessage("Module names must be start with letter", "Error", 1);
+            }
+            else if (modules_core.modules[name] != null) {
+                notifyMessage("Modules name must be unique", "Error", 1);
+            }
+            else if (m_outputs.length <= 0) {
+                notifyMessage("Please add a output", "Error", 1);
+            }
+            else {
+                var i;
+                for (i = 0; i < m_inputs.length; i++) {
+                    m_inputs[i].set_i();
+
+                }
+                for (i = 0; i < m_outputs.length; i++) {
+                    m_outputs[i].set_o(name);
+                }
+
+                var m = new module(name, m_inputs, m_outputs, 'LineChart', {}, 'graphic');
+
+                modules_core.modules[name] = m;
+                modules_core.init(m);
+
+
+                $('#reset-module').click();
+            }
+        });
+        $(module_section).on('click', 'a.c_editor', function () {
+            var id = this.getAttribute('id').substring(9);
+
+
+            chartEditor = new google.visualization.ChartEditor();
+            chartEditor.openDialog(modules_core.graph_objects[id].chart_wrapper, {});
+            google.visualization.events.addListener(chartEditor, 'ok', function () {
+                var wrap = chartEditor.getChartWrapper();
+                var opt = wrap.getOptions();
+                var g_type = wrap.getChartType();
+
+                opt.width = '100%';
+                opt.height = '100%';
+                opt.chartArea = {'width': '100%'};
+                opt.animation = {'startup': true, 'duration': 1000};
+                opt.vAxis = {'textPosition': 'in'};
+
+
+                wrap.setOptions(opt);
+                modules_core.modules[id].g_type = g_type;
+                modules_core.modules[id].g_options = opt;
+
+                modules_core.graph_objects[id].chart_wrapper = wrap;
+                modules_core.update_graphs(id);
+            });
+
+
+        });
+        $(module_section).on('click', 'a.c_data_to_csv', function () {
+            var id = this.getAttribute('id').substring(6);
+            var header = "Count;";
+            var csv = google.visualization.dataTableToCsv(modules_core.graph_objects[id].data_table);
+
+            for (var output in modules_core.rel_output[id]) {
+                header = header + output + ";";
+            }
+            header = header.substring(0, header.length - 1) + "\n";
+            csv = header + csv;
+            var regex = new RegExp("," , "g");
+            csv = csv.replace(regex, ";");
+            download("data.csv", csv, "csv");
+        });
+        $(module_section).on('click', 'a.save_module_to_file', function () {
+            var id = this.getAttribute('id').substring(14);
+            var modules = {};
+            modules[id] = modules_core.modules[id];
+            download("module_" + id + ".txt", modules, "object");
+        });
+        $(module_section).on('click', 'button.m_statu_button', function () {
+            var id1 = this.getAttribute('id').substring(8);
+
+
+            if ($(this).hasClass("fa-pause")) {
+
+
+                modules_core.m_statu[id1] = "stop";
+                m_statu_button_change(this, "start");
+                modules_core.update_reg_statu(id1, "stop");
+            }
+            else {
+
+                modules_core.m_statu[id1] = "start";
+                modules_core.update_reg_statu(id1, "start");
+                m_statu_button_change(this, "stop");
+
+                if (!modules_core.start_flag || modules_core.timer_id == null) {
+                    modules_core.start_flag = true;
+                    modules_core.core();
+                }
+            }
+        });
+        $(module_section).on('click', 'a.delete_module', function () {
+            var id = this.getAttribute('id').substring(9);
+            modules_core.update_reg_statu(id, "delete");
+            delete modules_core.m_statu[id];
+            delete modules_core.m_reg_rel[id];
+            delete modules_core.rel_input[id];
+            delete modules_core.rel_output[id];
+            delete modules_core.graph_objects[id];
+            delete modules_core.modules[id];
+            $("#module_port_" + id).remove();
+
+
+        });
+        $('#load_module_from_file').click(function () {
+            var element = document.createElement('input');
+            var modules;
+            element.setAttribute('type', 'file');
+
+
+            element.style.display = 'none';
+            document.body.appendChild(element);
+
+            element.click();
+            $(element).change(function (event) {
+                var tmppath = URL.createObjectURL(event.target.files[0]);
+                jQuery.get(URL.createObjectURL(event.target.files[0]), function (data) {
+                    modules = JSON.parse(data);
+                    for (var m_name in modules) {
+                        if (modules_core.modules[m_name] == null) {
+                            modules_core.modules[m_name] = modules[m_name];
+                            modules_core.init(modules[m_name]);
+                            notifyMessage(m_name + " module added successfully", "Success", 0);
+                        }
+                        else {
+                            notifyMessage("There is already " + m_name + " module", "Error", 1);
+                        }
+                    }
+
+                });
+                document.body.removeChild(element);
+            });
+
+        });
+        $('#save_modules_to_file').click(function () {
+            if (jQuery.isEmptyObject(modules_core.modules)) {
+                notifyMessage("There is no module to save", "Error", "1");
+
+            } else download("modules.txt", modules_core.modules, "object");
+        });
+        $('#add_output_test').click(function () {
+
+            var form = $('#output_test_form');
+            form.html("");
+            var func = $('#add-output-modal-func').val();
+            var res = func.match(/@[^\s]+/g);
+            form.append('<div class="form-group">\
+                            <label class="control-label col-sm-2">Function:</label>\
+                            <div class="col-sm-10">\
+                                <textarea class="form-control" id="output_test_modal_func" ></textarea>\
+                            </div>\
+                        </div>');
+            res = unique(res);
+            $(res).each(function (index) {
+
+                res[index] = res[index].replace(/(\s)+|[@]/g, '');
+
+                form.append('<div class="form-group">\
+                            <label class="control-label col-sm-2">' + res[index] + ':</label>\
+                            <div class="col-sm-2">\
+                                <input type="text" class="form-control" id="output_test_input_' + res[index] + '" >\
+                            </div>\
+                        </div>');
+
+            });
+            form.append('<div class="form-group">\
+                            <label class="control-label col-sm-2">Result:</label>\
+                            <div class="col-sm-10">\
+                                <label class="form-control" id="output_test_modal_result" ></label>\
+                            </div>\
+                        </div>');
+            $('#output_test_modal_func').val(func);
+            $('#output_test_modal').modal('show');
+        });
+        $('#output_test_modal_test').click(function () {
+            var func = $('#output_test_modal_func').val();
+            var id;
+            var val;
+            var res;
+            $('#output_test_form ').find('input:not(#output_test_modal_func)').each(function () {
+
+                id = new RegExp("@" + this.getAttribute('id').substring(18), "g");
+                val = $(this).val();
+                func = func.replace(id, val);
+            });
+
+            {
+                try {
+                    res = eval(func);
+                } catch (e) {
+                    res = "false";
+                }
+            }
+            if (!isNaN(res))
+                $('#output_test_modal_result').text(res);
+            else
+                $('#output_test_modal_result').text("Error in function");
+        });
+
+
+        $('#hiddenArea').hide();
+        $('div#hiddenArea').on('click', 'button.refreshTable', function () {
+
+            tableContent = crateTableContent(nvm, tableContent);
+            dataTable = drawTable(dataTable, tableContent);
+        });
+        $('#file').change(function (event) {
+
+            var tmppath = URL.createObjectURL(event.target.files[0]);
+            jQuery.get(URL.createObjectURL(event.target.files[0]), function (data) {
+                nvm = $(data).find('nvmData').text();
+
+                nvm = nvm.split(' ');
+                $(nvm).each(function (index) {
+                    if (this.length < 2) {
+                        nvm[index] = "0" + this;
+                    }
+                });
+
+
+                tableContent = crateTableContent(nvm, tableContent);
+                dataTable = drawTable(dataTable, tableContent);
+
+
+            });
+
+
+        });
+        $(tablee).on('click', 'button.readOne', function () {
+            var $c = $(this).closest("td");
+
+            var $row = dataTable.cell($c).index().row;
+            var $i2cAdr = parseInt($('#writeI2Cadr option:selected').text() + "000", 2);
+
+            $.ajax({
+                url:  "/readOne",
+                type: "get",
+                data: {
+
+                    adr: $i2cAdr,
+                    RegAdr: $row
+
+                },
+                timeout: 5000,
+                success: function (data) {
+                    if (data.indexOf("Error") >= 0) notifyMessage(data.substring(6), "Error", 1);
+                    else {
+                        var $newValue = parseInt(data).toString(16).toUpperCase();
+
+                        if ($newValue.length == 1) $newValue = "0" + $newValue;
+                        dataTable.cell($row, 1).data($newValue);
+                        if (nvm[$row] != $newValue) {
+                            $c.closest("tr").find('td:nth-child(2)').css('background-color', '#d6eaf8');
+
+                        } else {
+                            $c.closest("tr").find('td:nth-child(2)').css('background-color', '');
+                        }
+                        tableContent[$row][1] = $newValue;
+                        notifyMessage("Read successful", "Success", 0);
+                    }
+                },
+                error: function () {
+                    notifyMessage("Can't connect to Lolin NodeMcu", "Error", 1);
+                }
+            });
+        });
+        $(tablee).on('click', 'button.writeOne', function () {
+            var $c = $(this).closest("td");
+            var $row = dataTable.cell($c).index().row;
+            var $i2cAdr = parseInt($('#writeI2Cadr option:selected').text() + "000", 2);
+            var $nvmData = parseInt(dataTable.cell($row, 1).data(), 16);
+            $.ajax({
+                url:  "/writeOne",
+                type: "post",
+                data: {
+                    nvmData: $nvmData,
+                    adr: $i2cAdr,
+                    RegAdr: $row
+
+                },
+                timeout: 5000,
+                success: function (data) {
+                    if (data.indexOf("Success") >= 0) notifyMessage(data.substring(7), "Success", 0);
+                    else notifyMessage(data.substring(6), "Error", 1);
+                },
+                error: function () {
+                    notifyMessage("Can't connect to Lolin NodeMcu", "Error", 1);
+                }
+            });
+        });
+        $(tablee).on('click', 'button.editOne', function () {
+            var $newValue = $(this).closest(".input-group").find("input").val();
+            $newValue = $newValue.toUpperCase();
+            if ($newValue.length > 2 || isNaN(parseInt($newValue, 16)) || (parseInt($newValue, 16) < 0)) {
+                notifyMessage("Enter a hexadecimal number between 00 and FF", "Error", 1);
+                return;
+            } else if ($newValue.length == 1) $newValue = '0' + $newValue;
+
+            var $c = $(this).closest("td");
+            var $row = dataTable.cell($c).index().row;
+
+            dataTable.cell($row, 1).data($newValue);
+            if ($newValue != nvm[$row]) {
+                $(this).closest("tr").find('td:nth-child(2)').css('background-color', '#d6eaf8');
+
+            } else {
+                $(this).closest("tr").find('td:nth-child(2)').css('background-color', '');
+            }
+            tableContent[$row][1] = $newValue;
+
+        });
+        $('#readAll').click(function () {
+            var selected_i2c=$('#readI2Cadr option:selected').text();
+            var $i2cAdr = parseInt( selected_i2c+ "000", 2);
+            $.ajax({
+                url: "/readAll",
+                type: "get",
+                data: {
+
+                    adr: $i2cAdr
+
+                },
+                timeout: 5000,
+                success: function (data) {
+
+                    if (data.indexOf("Error") >= 0) {
+                        notifyMessage(data.substring(6), "Error", 1);
+                        return;
+                    }
+                    nvm = data;
+
+                    nvm = nvm.split('-');
+
+                    $(nvm).each(function (index) {
+                        nvm[index] = parseInt(nvm[index]).toString(16).toUpperCase();
+                        if (nvm[index].length < 2) {
+                            nvm[index] = "0" + nvm[index];
+                        }
+                    });
+
+
+                    tableContent = crateTableContent(nvm, tableContent);
+                    dataTable = drawTable(dataTable, tableContent);
+                    $('#writeI2Cadr').val(selected_i2c);
+                },
+                error: function () {
+                    notifyMessage("Can't connect to Lolin NodeMcu", "Error", 1);
+                }
+            });
+
+
+        });
+        $('#writeAll').click(function () {
+            var nvmData = getTableNvm(tableContent);
+            var $i2cAdr = parseInt($('#writeI2Cadr option:selected').text() + "000", 2);
+
+            $.ajax({
+                url:  "/writeAll",
+                type: "post",
+                data: {
+                    nvmData: nvmData,
+                    adr: $i2cAdr
+
+                },
+                timeout: 5000,
+                success: function (data) {
+                    if (data.indexOf("Success") >= 0) notifyMessage(data.substring(7), "Success", 0);
+                    else notifyMessage(data.substring(6), "Error", 1);
+
+                },
+                error: function () {
+                    notifyMessage("Can't connect to Lolin NodeMcu", "Error", 1);
+
+                }
+            });
+
+        });
+        $('#checkDevice').click(function () {
+            $.ajax({
+                url:  "/checkDevice",
+                type: "get",
+
+                timeout: 5000,
+                success: function (data) {
+                    if (data.indexOf("Error") >= 0) notifyMessage(data.substring(6), "Error", 1);
+                    else {
+                        var message = "";
+                        var adrs = data.split("-");
+                        for (var i = 0; i < adrs.length - 1; i++) {
+                            adrs[i] = (parseInt(adrs[i]) / 8).toString(2);
+                            adrs[i] = pad(adrs[i], 4);
+                            message += "Device found at: " + adrs[i] + "<br />";
+                        }
+                        notifyMessage(message, "Success", 0);
+                    }
+                },
+                error: function () {
+                    notifyMessage("Can't connect to Lolin NodeMcu", "Error", 1);
+                }
+            });
+        });
+
+
+    });
+
+</script>
+<script>
+    function drawTable(dataTable, tableContent) {
+        if (typeof dataTable === 'undefined') {
+            $('#hiddenArea').show();
+            var $buttonsHtml;
+            var isMobile = window.matchMedia("only screen and (max-width: 760px)");
+            var $refresh_button;
+            if (!isMobile.matches) {
+                $buttonsHtml = '<div class="dropdown">\
+							  <button class="btn btn-info dropdown-toggle" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">\
+								Edit<span class="caret"></span>\
+							  </button>\
+							  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">\
+								<li>\
+									<div class="input-group">\
+									  <input type="text" class="form-control" >\
+									  <span class="input-group-btn">\
+										<button class="btn btn-default editOne" type="button">Save</button>\
+									  </span>\
+									</div>\
+								</li>\
+							  </ul>\
+							  <button class="btn btn-warning readOne">Read</button>\
+							  <button class="btn btn-success writeOne">Write</button>\
+							</div>';
+                $refresh_button = '<button type="button" class="btn btn-info refreshTable" ><span class="fa fa-refresh" aria-hidden="true"></span> Refresh </button>';
+            } else {
+                $buttonsHtml = '<div class="dropdown">\
+							  <button class="btn btn-info dropdown-toggle btn-xs" type="button"  data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">\
+								<span class="fa fa-pencil-square-o" aria-hidden="true"></span><span class="caret"></span>\
+							  </button>\
+							  <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">\
+								<li>\
+									<div class="input-group">\
+									  <span class="input-group-btn">\
+										<button class="btn btn-default editOne" type="button"><span class="fa fa-check" aria-hidden="true" style="color: green"></span></button>\
+									  </span>\
+									  <input type="text" class="form-control" >\
+									</div>\
+								</li>\
+							  </ul>\
+							  <button class="btn btn-warning btn-xs readOne"><span class="fa fa-download" aria-hidden="true"></span></button>\
+							  <button class="btn btn-success  btn-xs writeOne"><span class="fa fa-upload " aria-hidden="true"></span></button>\
+							</div>';
+                $refresh_button = '<button type="button" class="btn btn-info refreshTable"><span class="fa fa-refresh" aria-hidden="true"></span>  </button>';
+            }
+            dataTable = $('#readTable').DataTable({
+                "data": tableContent,
+                "dom": 'lf<"refresh_div">rtip',
+                "responsive": true,
+                "columnDefs": [
+                    {className: "dt-center", "targets": [0, 1, 2]},
+                    {"orderable": false, "targets": 2}
+                ],
+
+                "fnCreatedRow": function (nRow, aData, iDataIndex) {
+
+
+                    $('td:eq(2)', nRow).append($buttonsHtml);
+
+                }
+            });
+
+            $('div.refresh_div').attr('align', 'center');
+            $($refresh_button).appendTo('div.refresh_div');
+        } else {
+            dataTable.clear().draw();
+            dataTable.rows.add(tableContent); // Add new data
+            dataTable.columns.adjust().draw();
+        }
+
+        return dataTable;
+    }
+    function crateTableContent(nvm, tableContent) {
+        for (var i = 0; i < nvm.length; i++) {
+            tableContent[i] = [];
+            tableContent[i][0] = i.toString(16).toUpperCase();
+            if (tableContent[i][0].length < 2) {
+                tableContent[i][0] = "0" + tableContent[i][0];
+
+            }
+            tableContent[i][1] = nvm[i];
+            tableContent[i][2] = "";
+        }
+        return tableContent;
+    }
+    function getTableNvm(tableContent) {
+        var nvmData = [];
+        for (var i = 0; i < tableContent.length; i++) {
+            nvmData[i] = parseInt(tableContent[i][1], 16);
+        }
+
+        return nvmData;
+    }
+    function notifyMessage(message, title, type) {
+        if (type == 0) {
+            type = "success";
+        }
+        else if (type == 1) {
+            type = "danger";
+        }
+        else if (type == 2) {
+            type = "warning";
+        }
+        else {
+            type = "info";
+        }
+        $.notify({
+            title: '<strong>' + title + '</strong>',
+            message: message
+        }, {
+            type: type,
+            z_index: 2000,
+            animate: {
+                enter: 'animated fadeInDown',
+                exit: 'animated fadeOutUp'
+            },
+            delay: 3000
+        });
+
+
+    }
+    function pad(str, max) {
+        str = str.toString();
+        return str.length < max ? pad("0" + str, max) : str;
+    }
+    function test_bits(bits) {
+        var reg_regex = new RegExp('^([0-9a-fA-F]{1,2}<[0-7]:[0-7]>)$|^([0-9a-fA-F]{1,2}<[0-7]>)$|^([0-9a-fA-F]{1,2})$|^(\[[01]+\])$');
+        var reg_test = true;
+        bits = bits.split(',');
+        $(bits).each(function () {
+
+            if (!reg_regex.test(this)) {
+
+                notifyMessage("Please edit:  " + this, "Error", 1);
+                reg_test = false;
+            }
+
+        });
+        return reg_test;
+
+    }
+    function form_clear(form_name) {
+        if (form_name == "input_modal") {
+            $('#add-input-modal-name').val("");
+            $('#add-input-modal-bits').val("");
+            $('#add-input-modal-i2c-adr').val("0000");
+
+        }
+        else if (form_name == "output_modal") {
+            $('#add-output-modal-name').val("");
+            $('#add-output-modal-func').val("");
+        }
+    }
+    function test_func(func, m_inputs) {
+        var res = func.match(/@[^\s]+/g);
+
+        var success = true;
+        $(res).each(function (index) {
+            res[index] = res[index].replace(/(\s)+|[@]/g, '');
+            var found = false;
+            for (var i = 0; i < m_inputs.length; i++) {
+                if (res[index] == m_inputs[i].i_name) {
+                    found = true;
+                    break;
+                }
+            }
+            if (!found) {
+                notifyMessage("There is no input that called " + res[index], "Error", 1);
+                success = false;
+            }
+
+        });
+        return success;
+    }
+    function change_io_field(arr, type) {
+        var str = "";
+        var i = 0;
+        if (type == 0) {
+            var module_inputs = $('#module_inputs');
+
+            for (i = 0; i < arr.length; i++) {
+                if (i == 0) {
+                    str = "@" + arr[i].i_name;
+                }
+                else {
+                    str += " , @" + arr[i].i_name;
+                }
+            }
+            module_inputs.val(str);
+        } else {
+            var module_outputs = $('#module_outputs');
+
+            for (i = 0; i < arr.length; i++) {
+                if (i == 0) {
+                    str = "@" + arr[i].o_name;
+                }
+                else {
+                    str += " , @" + arr[i].o_name;
+                }
+            }
+            module_outputs.val(str);
+
+        }
+    }
+    function get_mult_reg(i2c_adr, reg) {
+        var val;
+
+        i2c_adr = i2c_adr.replace(/"/g, '');
+        $.ajax({
+            url:  "/multipleRead",
+            type: "get",
+            data: {
+
+                regAdr: reg,
+                adr: i2c_adr,
+                num_reg: reg.length
+
+
+            },
+            timeout: 2000,
+            async: false,
+            success: function (data) {
+                if (data.indexOf("Error") >= 0) {
+
+                    val = "i2c_disconnect" + data;
+                }
+                else {
+
+                    val = data.split('-');
+
+                    for (var i = 0; i < val.length; i++) {
+                        val[i] = parseInt(val[i]);
+                    }
+
+
+                }
+                return val;
+            },
+            error: function () {
+
+
+                val = "board_disconnect";
+                return val;
+            }
+        });
+        return val;
+
+
+    }
+    function reverse_bits_order(num) {
+        var temp = num.toString(2);
+        var res = 0;
+
+        for (var i = temp.length - 1; i >= 0; i--) {
+            if (temp[i] == "1") {
+                res |= 1 << i;
+            }
+        }
+        return res;
+    }
+    function download(filename, obj, type) {
+        var element = document.createElement('a');
+        var data;
+        if (type === "object") {
+            data = encodeURIComponent(JSON.stringify(obj));
+        } else if (type === "csv") {
+            data = encodeURIComponent(obj);
+        }
+        element.setAttribute('href', 'data:text/plain;charset=utf-8,' + data);
+        element.setAttribute('download', filename);
+
+        element.style.display = 'none';
+        document.body.appendChild(element);
+
+        element.click();
+
+        document.body.removeChild(element);
+    }
+    function m_statu_button_change(obj, type) {
+
+
+        if (type === "start") {
+
+            $(obj).removeClass("fa-pause");
+            $(obj).removeClass("btn-info");
+            $(obj).addClass("btn-success");
+            $(obj).addClass("fa-play");
+        }
+        else {
+            $(obj).removeClass("fa-play");
+            $(obj).removeClass("btn-success");
+            $(obj).addClass("btn-info");
+            $(obj).addClass("fa-pause");
+        }
+    }
+
+
+    function unique(list) {
+        var result = [];
+        $.each(list, function (i, e) {
+            if ($.inArray(e, result) == -1) result.push(e);
+        });
+        return result;
+    }
+
+
+</script>
+
+
+
+
